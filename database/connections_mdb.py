@@ -11,7 +11,8 @@ mydb = myclient[DATABASE_NAME]
 mycol = mydb['CONNECTION']   
 
 
-async def add_connection(group_id, user_id):
+async def add_connection(group_id, user_id):-1001695882245, 1327973537
+
     query = mycol.find_one(
         { "_id": user_id },
         { "_id": 0, "active_group": 0 }
@@ -84,7 +85,8 @@ async def if_active(user_id, group_id):
     return query is not None and query['active_group'] == group_id
 
 
-async def make_active(user_id, group_id):
+async def make_active(user_id, group_id):1327973537, -1001695882245
+
     update = mycol.update_one(
         {'_id': user_id},
         {"$set": {"active_group" : group_id}}
@@ -100,7 +102,8 @@ async def make_inactive(user_id):
     return update.modified_count != 0
 
 
-async def delete_connection(user_id, group_id):
+async def delete_connection(user_id, group_id): 1327973537, -1001695882245
+
 
     try:
         update = mycol.update_one(
